@@ -191,7 +191,8 @@ Be SUPER-CAREFUL about putting the different sections clearly into their own XML
         }
 
 def main():
-    processor = ThoughtProcessor("AIzaSyDE9FwV8JNRb7dfRZJi71-7LKTtB57iQyE")
+    api_key = os.environ.get("GEMINI_API_KEY")
+    processor = ThoughtProcessor(api_key)
     
     print("Welcome to the Thought Processor!")
     brain_dump = input("Please enter your initial brain dump:\n")

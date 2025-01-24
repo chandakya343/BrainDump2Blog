@@ -213,7 +213,7 @@ The final output should feel like an organic exploration of ideas while maintain
 
 def main():
     """Example usage of Draft2Blog"""
-    api_key = "AIzaSyDE9FwV8JNRb7dfRZJi71-7LKTtB57iQyE"  # Replace with your actual API key
+    api_key = os.environ.get("GEMINI_API_KEY")  # Replace with your actual API key
     
     # Initialize converter
     converter = Draft2Blog(api_key)
