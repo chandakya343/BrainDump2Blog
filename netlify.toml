@@ -1,11 +1,6 @@
 [build]
-  command = "npm install && npm run build"
-  functions = "functions"
   publish = "frontend"
-
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["@google/generative-ai"]
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/api/*"

@@ -1,6 +1,4 @@
-google-generativeai
-grpcio==1.57.0  # Pinned version known to work with google-generativeai
-pydantic==2.10.5
+pydantic
 fastapi
-httpx
-uvicorn==0.34.0
+uvicorn
+google-generativeai
