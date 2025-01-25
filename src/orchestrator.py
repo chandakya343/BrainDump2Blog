@@ -42,6 +42,13 @@ class Orchestrator:
         return self.blog_converter.convert_draft(self.current_state["connected_narrative"])
 
 app = FastAPI(title="Idea@Blog")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # For development - restrict this in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 orchestrator = Orchestrator()
 
 @app.get("/", response_class=HTMLResponse)
