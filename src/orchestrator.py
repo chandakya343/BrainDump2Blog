@@ -7,6 +7,7 @@ from typing import Optional, Dict
 from datetime import datetime
 import uvicorn
 import os
+from mangum import Adapter
 
 from idea2draft2 import ThoughtProcessor
 from Draft2Blog import Draft2Blog, BlogConfig
@@ -49,7 +50,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+handler = Adapter(app)
 orchestrator = Orchestrator()
+
 
 @app.get("/", response_class=HTMLResponse)
 async def get_index():
