@@ -1,7 +1,7 @@
 [build]
-  command = "npm install && npm run build"
+  command = "pip install -r requirements.txt && uvicorn src.orchestrator:app"
   publish = "frontend"
-  functions = "functions-build"  # Changed from netlify/functions to functions-build
+  environment = { PYTHON_VERSION = "3.13" }
 
 [[redirects]]
   from = "/api/*"
